@@ -131,7 +131,20 @@
             <li>[ Reportes avanzados de ganancias netas, cheques por vencer y movimientos por período ]</li>
             <li>[ Gestión de usuarios y control de roles diferenciados: Dueño y Cajeros ]</li>
         </ul>
-    </div>
+    </div>async function iniciarCamara() {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+    const videoElement = document.querySelector('video'); // Asegúrate de tener una etiqueta <video> en tu HTML
+    if (videoElement) {
+      videoElement.srcObject = stream;
+    }
+  } catch (error) {
+    console.error("No se pudo acceder a la cámara:", error);
+  }
+}
+
+iniciarCamara();
+
 
     <footer>
         [ Arquitectura base configurada para despliegue seguro en GitHub ]
